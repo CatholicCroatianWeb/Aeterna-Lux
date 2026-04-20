@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aeterna Lux</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Times New Roman", Times, serif;
+  background:#0a0a0a;
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9));
+}
+
+.hero img{
+  width:180px;
+  border-radius:12px;
+  margin-bottom:15px;
+  box-shadow:0 0 15px rgba(212,175,55,0.3);
+}
+
+/* SECTIONS */
+.section{
+  padding:70px 20px;
+  margin:30px;
+  background:rgba(255,255,255,0.03);
+  border-radius:18px;
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  color:#000;
+  border-radius:14px;
+  transition:0.3s;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+}
+
+/* SMALL IMAGE */
+.small-img{
+  width:160px;
+  border-radius:12px;
+  margin-bottom:10px;
+  box-shadow:0 0 10px rgba(212,175,55,0.25);
+}
+
+/* BUTTON */
+.btn-gold{
+  background:#d4af37;
+  color:#000;
+  font-weight:bold;
+  border:none;
+}
+
+/* FOOTER IMAGE */
+.footer-img{
+  width:140px;
+  border-radius:50%;
+  margin-top:10px;
+  box-shadow:0 0 12px rgba(212,175,55,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+<img src="Albrecht_Dürer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg" alt="Holy Trinity">
+<h1>Aeterna Lux</h1>
+<p>Eternal Light of Truth and Faith</p>
+</section>
+
+<!-- DAILY -->
+<section class="section text-center">
+<h2>Daily Gospel</h2>
+<p id="verseText" class="text-warning"></p>
+
+<h3>Insight</h3>
+<p id="insightText"></p>
+
+<h3>Reflection</h3>
+<p id="reflectionText"></p>
+</section>
+
+<!-- HABIT ENGINE -->
+<section class="section text-center">
+<h2>Daily Habit Engine</h2>
+
+<div class="small-box">
+<h4>Prayer of the Day</h4>
+<p id="prayerText"></p>
+</div>
+
+<div class="small-box">
+<h4>Action Step</h4>
+<p id="actionText"></p>
+</div>
+</section>
+
+<!-- YOUTUBE CHANNELS --> <section class="section text-center"> <h2>YouTube Channels</h2> <div class="container"> <div class="row g-4"> <div class="col-md-4"> <div class="card p-3 h-100"> <h5>Militant Thomist</h5> <p>Philosophy & apologetics</p> <a class="btn btn-gold" target="_blank" href="https://www.youtube.com/@MilitantThomist">Visit</a> </div> </div> <div class="col-md-4"> <div class="card p-3 h-100"> <h5>Sensus Fidelium</h5> <p>Traditional sermons</p> <a class="btn btn-gold" target="_blank" href="https://www.youtube.com/channel/UC5QOCYhUFkgPny_FWjo33LQ">Visit</a> </div> </div> <div class="col-md-4"> <div class="card p-3 h-100"> <h5>Shameless Popery</h5> <p>Catholic explanations</p> <a class="btn btn-gold" target="_blank" href="https://www.youtube.com/@shamelesspopery">Visit</a> </div> </div> </div> </div> </section>
+
+<!-- TOPICS -->
+<section class="section text-center">
+<h2>Topics</h2>
+
+<div class="container">
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card p-3">
+<img src="bible.jpg">
+<h5 class="mt-2">Bible</h5>
+<a class="btn btn-gold" href="https://www.bible.com/bible/111/JHN.1.NIV" target="_blank">Open</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+<img src="teology.webp">
+<h5 class="mt-2">Theology</h5>
+<a class="btn btn-gold" href="https://www.catholic.com/encyclopedia/theology" target="_blank">Open</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+<img src="faith.jpg">
+<h5 class="mt-2">Faith Life</h5>
+<a class="btn btn-gold" href="https://www.vatican.va/content/vatican/en.html" target="_blank">Open</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- EUCHARISTIC MIRACLES -->
+<section class="section text-center">
+<h2>Eucharistic Miracles</h2>
+
+<img class="small-img" src="miricle.jpeg">
+
+<p class="mb-3">
+Documented Eucharistic miracles recognized by the Catholic Church.
+</p>
+
+<a class="btn btn-gold"
+target="_blank"
+href="https://www.miracolieucaristici.org/en/liste/list.html">
+Open Archive
+</a>
+</section>
+
+<!-- DEEP CONTENT -->
+<section class="section text-center">
+<h2>Deep Content</h2>
+<div class="small-box" id="deepContent"></div>
+</section>
+
+<!-- POPE -->
+<section class="section text-center">
+<h2>Pope Leo XIV</h2>
+<img class="footer-img" src="leo-xiv.png">
+</section>
+
+<footer class="text-center p-4 bg-black">
+© 2026 Aeterna Lux
+</footer>
+
+<script>
+const gospels=[
+"John 1:1 — In the beginning was the Word.",
+"Matthew 5:14 — You are the light of the world.",
+"John 14:6 — I am the way, the truth, and the life."
+];
+
+const insights=[
+"Truth does not change.",
+"Faith requires discipline.",
+"Silence brings clarity."
+];
+
+const reflections=[
+"Remove distractions.",
+"Live with discipline.",
+"Act with faith."
+];
+
+const prayers=[
+"Lord, guide my steps today.",
+"Give me wisdom and clarity.",
+"Help me live in truth."
+];
+
+const actions=[
+"Spend 5 minutes in silence today.",
+"Read a Gospel passage slowly.",
+"Do one good deed anonymously."
+];
+
+const deepContent=[
+"The Eucharist is the real presence of Christ.",
+"Faith is discipline, not emotion.",
+"Prayer aligns the soul with truth.",
+"Christian morality is objective."
+];
+
+function pick(arr){
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+document.getElementById("verseText").innerText = pick(gospels);
+document.getElementById("insightText").innerText = pick(insights);
+document.getElementById("reflectionText").innerText = pick(reflections);
+
+document.getElementById("prayerText").innerText = pick(prayers);
+document.getElementById("actionText").innerText = pick(actions);
+
+document.getElementById("deepContent").innerText = pick(deepContent);
+</script>
+
+</body>
+</html>
